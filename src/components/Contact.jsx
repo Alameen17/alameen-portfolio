@@ -1,14 +1,39 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
-  const [formData, setFormData] = React.useState({ name: '', message: '' });
+  const [formData, setFormData] = React.useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = React.useState({ type: '', message: '' });
+  const [loading, setLoading] = React.useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Add your form submission logic here
+    setLoading(true);
+    setStatus({ type: '', message: '' });
+
+    try {
+      // Replace these with your EmailJS credentials
+      await emailjs.send(
+        'service_i43u76c',      // service id Get from EmailJS dashboard
+        'template_0h2spqw',     // template id Get from EmailJS dashboard
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        'r2tL5qu5oKFhHnp1A'       // Public key Get from EmailJS dashboard
+      );
+
+      setStatus({ type: 'success', message: 'Message sent successfully!' });
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      setStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
+      console.error('EmailJS error:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -32,8 +57,8 @@ export default function Contact() {
                 <h4 className="text-white font-semibold mb-2 flex items-center gap-2">
                   <FiMail className="text-blue-400" /> Email
                 </h4>
-                <a href="mailto:alameen@example.com" className="text-gray-300 hover:text-white transition-colors">
-                  alameen@example.com
+                <a href="mailto:alameenadekunle029@gmail.com" className="text-gray-300 hover:text-white transition-colors">
+                  alameenadekunle029@gmail.com
                 </a>
               </div>
 
@@ -67,7 +92,19 @@ export default function Contact() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-gray-600 transition-colors" 
-                  placeholder="Your name" 
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-sm text-gray-400 mb-2">Email</label>
+                <input 
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-gray-600 transition-colors" 
+                  placeholder="your@email.com"
+                  required
                 />
               </div>
               <div>
@@ -77,14 +114,27 @@ export default function Contact() {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-gray-600 transition-colors resize-none" 
                   rows={4} 
-                  placeholder="Brief message" 
+                  placeholder="Brief message"
+                  required
                 />
               </div>
+              
+              {status.message && (
+                <div className={`p-3 rounded-lg text-sm ${
+                  status.type === 'success' 
+                    ? 'bg-green-500/20 text-green-400 border border-green-500/50' 
+                    : 'bg-red-500/20 text-red-400 border border-red-500/50'
+                }`}>
+                  {status.message}
+                </div>
+              )}
+
               <button 
                 onClick={handleSubmit}
-                className="w-full md:w-auto px-6 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-200 transition-colors"
+                disabled={loading}
+                className="w-full md:w-auto px-6 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send message
+                {loading ? 'Sending...' : 'Send message'}
               </button>
             </div>
           </div>
