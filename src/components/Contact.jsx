@@ -14,7 +14,6 @@ export default function Contact() {
     setStatus({ type: '', message: '' });
 
     try {
-      // Replace these with your EmailJS credentials
       await emailjs.send(
         'service_i43u76c',      // service id Get from EmailJS dashboard
         'template_0h2spqw',     // template id Get from EmailJS dashboard
