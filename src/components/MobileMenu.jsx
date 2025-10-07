@@ -1,32 +1,29 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { FiGithub, FiLinkedin } from 'react-icons/fi'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FiGithub, FiLinkedin } from 'react-icons/fi';
 
 export default function MobileMenu({ open }) {
-  const social = [
-    { icon: <FiGithub />, label: 'GitHub', href: 'https://github.com/Alameen17' },
-    { icon: <FiLinkedin />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/al-ameen-adekunle-2a085a1b5/' },
-  ]
-
+  if (!open) return null;
+  
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: open ? 1 : 0, y: open ? 0 : -10 }}
-      className={`md:hidden bg-[#0b1220]/90 backdrop-blur-sm text-gray-200 absolute w-full left-0 top-16 z-30`}
-      style={{ display: open ? 'block' : 'none' }}
+    <motion.div 
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="fixed top-[73px] left-0 w-full bg-[#0a0a0a] border-b border-gray-800/50 z-40 md:hidden"
     >
-      <div className="flex flex-col gap-4 px-6 py-6">
-        <a href="#about" className="py-2">About</a>
-        <a href="#projects" className="py-2">Projects</a>
-        <a href="#contact" className="py-2">Contact</a>
-        <div className="flex gap-4 pt-2">
-          {social.map(s => (
-            <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className="text-2xl">
-              {s.icon}
-            </a>
-          ))}
+      <div className="px-6 py-6 flex flex-col gap-4">
+        <a href="#about" className="text-gray-300 hover:text-white transition-colors py-2">About</a>
+        <a href="#projects" className="text-gray-300 hover:text-white transition-colors py-2">Projects</a>
+        <a href="#contact" className="text-gray-300 hover:text-white transition-colors py-2">Contact</a>
+        <div className="flex gap-4 pt-4 border-t border-gray-800">
+          <a href="https://github.com/Alameen17" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+            <FiGithub className="text-xl" />
+          </a>
+          <a href="https://www.linkedin.com/in/al-ameen-adekunle-2a085a1b5/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+            <FiLinkedin className="text-xl" />
+          </a>
         </div>
       </div>
     </motion.div>
-  )
+  );
 }

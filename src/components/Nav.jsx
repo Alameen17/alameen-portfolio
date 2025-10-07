@@ -1,45 +1,32 @@
-import React, { useState } from "react";
-import { FiGithub, FiLinkedin, FiMenu } from "react-icons/fi";
+import React from 'react';
+import { FiGithub, FiLinkedin, FiMenu, FiX } from 'react-icons/fi';
 
-export default function Nav() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
+export default function Nav({ open, onOpen }) {
   return (
-    <header className="bg-gray-900 text-white p-4 flex justify-between items-center">
-      <div className="text-xl font-bold">Al-ameen Adekunle</div>
-
-      <nav className="hidden md:flex gap-6">
-        <a href="#projects" className="hover:text-blue-400">Projects</a>
-        <a href="#contact" className="hover:text-blue-400">Contact</a>
-        <a href="https://github.com/Alameen17" target="_blank" rel="noopener noreferrer">
-          <FiGithub className="inline text-2xl" />
+    <header className="fixed top-0 w-full bg-[#0a0a0a]/80 backdrop-blur-md border-b border-gray-800/50 z-50">
+      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" className="text-xl font-bold text-white hover:text-gray-300 transition-colors">
+          Al-ameen
         </a>
-        <a href="https://www.linkedin.com/in/al-ameen-adekunle-2a085a1b5/" target="_blank" rel="noopener noreferrer">
-          <FiLinkedin className="inline text-2xl" />
-        </a>
-      </nav>
 
-      {/* Mobile menu button */}
-      <button
-        className="md:hidden p-2"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        <FiMenu className="text-2xl" />
-      </button>
+        <nav className="hidden md:flex items-center gap-8">
+          <a href="#about" className="text-gray-400 hover:text-white transition-colors">About</a>
+          <a href="#projects" className="text-gray-400 hover:text-white transition-colors">Projects</a>
+          <a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a>
+          <div className="flex items-center gap-4 ml-4">
+            <a href="https://github.com/Alameen17" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <FiGithub className="text-xl" />
+            </a>
+            <a href="https://www.linkedin.com/in/al-ameen-adekunle-2a085a1b5/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <FiLinkedin className="text-xl" />
+            </a>
+          </div>
+        </nav>
 
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-gray-800 p-4 flex flex-col gap-4 md:hidden">
-          <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
-          <a href="https://github.com/Alameen17" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/al-ameen-adekunle-2a085a1b5/" target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
-        </div>
-      )}
+        <button onClick={onOpen} className="md:hidden text-white">
+          {open ? <FiX className="text-2xl" /> : <FiMenu className="text-2xl" />}
+        </button>
+      </div>
     </header>
   );
 }
