@@ -5,36 +5,36 @@ import { FiBriefcase, FiCalendar } from 'react-icons/fi';
 export default function Experience() {
   const experiences = [
     {
-      role: 'Senior Backend Developer',
-      company: 'Tech Company',
-      period: '2023 - Present',
-      description: 'Led development of microservices architecture handling 100K+ daily requests. Reduced API response time by 60% through caching optimization.',
+      role: 'Backend Developer',
+      company: 'The TechSpace',
+      period: '2024 - Present',
+      description: 'Engineered scalable backend applications using C# and .NET Core, enabling business-critical services to handle increased user loads with minimal latency.',
       achievements: [
-        'Architected and deployed 5+ microservices on Kubernetes',
-        'Implemented CI/CD pipelines reducing deployment time by 75%',
-        'Mentored 3 junior developers in best practices'
+        'Built a Blazor Server web application using C# and .NET Core to streamline internal operations, reducing admin processing time by 60%, which improved task turnaround and reduced manual workload.',
+        'Integrated real-time monitoring with AWS CloudWatch and Application Insights, reducing downtime by 15% and enabling proactive incident response.',
+        'Built serverless applications using AWS Lambda, lowering infrastructure costs by 20% while increasing performance for intermittent workloads.'
       ]
     },
     {
       role: 'Backend Developer',
-      company: 'Startup Inc',
-      period: '2021 - 2023',
-      description: 'Built RESTful APIs and database schemas for a rapidly growing SaaS platform. Collaborated with frontend team to deliver features.',
+      company: 'Natview Foundation',
+      period: '2022 - 2023',
+      description: 'Developed and deployed RESTful APIs using ASP.NET Core, hosted by Azure App Services, to support seamless data exchange between client and server systems.',
       achievements: [
-        'Designed database architecture supporting 50K+ users',
-        'Integrated OAuth2 authentication with multiple providers',
-        'Reduced database query time by 40% through indexing'
+        'Led the migration from a monolithic architecture to microservices, deploying services to Azure Kubernetes Service (AKS), which accelerated development cycles and reduced deployment-related issues by 40%.',
+        'Automated backend testing pipelines using Azure DevOps and xUnit, reducing manual QA efforts by 30% and improving release confidence across development sprints.',
+        'Utilized C++ modules for performance-critical components in the backend (e.g., data processing and transformation services), improving execution speed by 20% compared to equivalent C# implementations.'
       ]
     },
     {
-      role: 'Junior Developer',
+      role: 'Backend Developer (Intern)',
       company: 'Ambrey Limited',
-      period: '2020 - 2021',
-      description: 'Developed backend services for client projects using Node.js and Express. Worked on API integrations and database design.',
+      period: '2021 - 2022',
+      description: 'Contributed to process improvements regarding technical designs, user experience, and functional perspectives.',
       achievements: [
-        'Built and maintained 10+ client REST APIs',
-        'Implemented automated testing achieving 85% coverage',
-        'Collaborated with cross-functional teams on 15+ projects'
+        'Transformed design mockups into functional backend features, integrating SOAP web services.',
+        'Enhanced data retrieval efficiency by optimizing database schemas for MySQL and MongoDB.',
+        'Contributed to the development of user-friendly web applications by integrating backend functionality using React.js and Angular.'
       ]
     }
   ];
