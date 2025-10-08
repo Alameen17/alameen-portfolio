@@ -8,7 +8,7 @@ export default function AvailabilityStatus() {
     status: 'available', // 'available', 'limited', 'unavailable'
     message: 'Available for new projects',
     nextAvailable: null, // Date when you'll be available (if currently unavailable)
-    calendarLink: 'https://calendly.com/your-username', // Your Calendly or Cal.com link
+    calendarLink: 'https://cal.com/adekunle-alameen-62g0yz', // Your Calendly or Cal.com link
   });
 
   const statusConfig = {
