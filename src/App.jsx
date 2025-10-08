@@ -1,4 +1,5 @@
 import React from 'react';
+import { ThemeProvider } from './components/ThemeContext';
 import LoadingScreen from './components/LoadingScreen3D';
 import Nav from './components/Nav';
 import MobileMenu from './components/MobileMenu';
@@ -18,16 +19,16 @@ export default function App() {
     // Simulate loading time (minimum 2 seconds for effect)
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 2500);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <>
+    <ThemeProvider>
       <LoadingScreen isLoading={isLoading} />
       
-      <div className="min-h-screen bg-[#0a0a0a] text-white">
+      <div className="min-h-screen bg-white dark:bg-[#0a0a0a] text-gray-900 dark:text-white transition-colors duration-300">
         <ScrollProgress />
         <Nav onOpen={() => setOpen(v => !v)} open={open} />
         <MobileMenu open={open} />
@@ -40,6 +41,6 @@ export default function App() {
         </main>
         <Footer />
       </div>
-    </>
+    </ThemeProvider>
   );
 }
