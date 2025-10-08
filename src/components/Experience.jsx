@@ -28,7 +28,7 @@ export default function Experience() {
     },
     {
       role: 'Junior Developer',
-      company: 'Digital Agency',
+      company: 'Ambrey Limited',
       period: '2020 - 2021',
       description: 'Developed backend services for client projects using Node.js and Express. Worked on API integrations and database design.',
       achievements: [
