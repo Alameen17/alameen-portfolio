@@ -10,7 +10,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-32 px-6 bg-gray-500 dark:bg-transparent">
+    <section id="about" className="py-32 px-6 bg-white dark:bg-transparent">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -18,8 +18,8 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">About</h2>
-          <p className="text-lg text-gray-400 max-w-3xl leading-relaxed mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">About</h2>
+          <p className="text-lg text-gray-700 dark:text-gray-400 max-w-3xl leading-relaxed mb-8">
             Experienced and results-driven software developer with hands-on involvement across the full SDLC. 
             Skilled in building scalable, maintainable backend systems and cloud-native applications.
           </p>
@@ -32,7 +32,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="px-4 py-3 bg-gray-900/50 border border-gray-800/50 rounded-lg text-gray-300 text-sm hover:border-gray-700 transition-colors"
+                className="px-4 py-3 bg-gray-200 dark:bg-gray-900/50 border border-gray-300 dark:border-gray-800/50 rounded-lg text-gray-900 dark:text-gray-300 text-sm hover:border-gray-400 dark:hover:border-gray-700 transition-colors"
               >
                 {skill}
               </motion.div>
