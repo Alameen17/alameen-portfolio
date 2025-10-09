@@ -45,7 +45,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-32 px-6">
+    <section id="projects" className="py-32 px-6 bg-gray-50 dark:bg-transparent">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -53,8 +53,8 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Selected Projects</h2>
-          <p className="text-gray-400 mb-12">Some of my recent work that I'm proud of</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Selected Projects</h2>
+          <p className="text-gray-600 dark:text-gray-400 mb-12">Some of my recent work that I'm proud of</p>
           
           <div className="grid md:grid-cols-3 gap-6">
             {projects.map((project, i) => (
@@ -65,10 +65,10 @@ export default function Projects() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(59, 130, 246, 0.15)' }}
-                className="group block p-6 bg-gray-900/30 border border-gray-800/50 rounded-xl hover:border-blue-500/50 transition-all duration-300"
+                className="group block p-6 bg-white dark:bg-gray-900/30 border border-gray-200 dark:border-gray-800/50 rounded-xl hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-300"
               >
                 <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {project.name}
                   </h3>
                   <div className="flex gap-2">
@@ -76,7 +76,7 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className="text-gray-400 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                       onClick={(e) => e.stopPropagation()}
                     >
                       <FiGithub className="text-xl" />
@@ -86,7 +86,7 @@ export default function Projects() {
                         href={project.demo}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-gray-400 hover:text-white transition-colors"
+                        className="text-gray-400 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                         onClick={(e) => e.stopPropagation()}
                       >
                         <FiExternalLink className="text-xl" />
@@ -95,12 +95,12 @@ export default function Projects() {
                   </div>
                 </div>
 
-                <p className="text-gray-400 leading-relaxed mb-3">
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
                   {project.desc}
                 </p>
 
-                <div className="mb-4 px-3 py-2 bg-blue-500/10 border border-blue-500/20 rounded-lg">
-                  <p className="text-blue-300 text-sm font-medium">
+                <div className="mb-4 px-3 py-2 bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 rounded-lg">
+                  <p className="text-blue-700 dark:text-blue-300 text-sm font-medium">
                     💡 {project.impact}
                   </p>
                 </div>
@@ -109,7 +109,7 @@ export default function Projects() {
                   {project.tags.map(tag => (
                     <span 
                       key={tag.name}
-                      className="inline-flex items-center gap-1 px-2 py-1 bg-gray-800/50 border border-gray-700/50 rounded text-gray-300 text-xs"
+                      className="inline-flex items-center gap-1 px-2 py-1 bg-gray-100 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700/50 rounded text-gray-700 dark:text-gray-300 text-xs"
                     >
                       {tag.icon}
                       {tag.name}
@@ -121,7 +121,7 @@ export default function Projects() {
                   href={project.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-gray-500 group-hover:text-gray-300 transition-colors text-sm"
+                  className="inline-flex items-center gap-2 text-gray-500 dark:text-gray-500 group-hover:text-gray-900 dark:group-hover:text-gray-300 transition-colors text-sm"
                 >
                   View Project <FiArrowRight />
                 </a>

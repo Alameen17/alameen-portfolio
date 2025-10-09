@@ -1,15 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FiDownload } from 'react-icons/fi';
 
 export default function About() {
   const skills = [
-    'Node.js', '.NET', 'C#', 'Postgres',
+    'Node.js', 'Express', 'NestJS', 'Postgres',
     'MongoDB', 'Docker', 'Kubernetes', 'AWS',
-    'RESTful APIs', 'Microservices', 'Typescript', 'CI/CD'
+    'RESTful APIs', 'Microservices', 'Jest', 'CI/CD'
   ];
 
   return (
-    <section id="about" className="py-32 px-6">
+    <section id="about" className="py-32 px-6 bg-gray-500 dark:bg-transparent">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

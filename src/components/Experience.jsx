@@ -39,8 +39,8 @@ export default function Experience() {
     }
   ];
 
-  return (
-    <section id="experience" className="py-32 px-6 bg-gradient-to-b from-transparent to-gray-900/20">
+return (
+    <section id="experience" className="py-32 px-6 bg-white dark:bg-[#0a0a0a]">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,8 +48,8 @@ export default function Experience() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Experience</h2>
-          <p className="text-gray-400 mb-12">My professional journey in software development</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Experience</h2>
+          <p className="text-gray-600 dark:text-gray-400 mb-12">My professional journey in software development</p>
 
           <div className="relative">
             {/* Timeline line */}
@@ -66,32 +66,32 @@ export default function Experience() {
                   className="relative pl-8 md:pl-20"
                 >
                   {/* Timeline dot */}
-                  <div className="absolute left-0 md:left-8 top-2 w-4 h-4 bg-blue-500 rounded-full border-4 border-[#0a0a0a] transform -translate-x-[7px]" />
+                  <div className="absolute left-0 md:left-8 top-2 w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-[#0a0a0a] transform -translate-x-[7px]" />
 
-                  <div className="bg-gray-900/30 border border-gray-800/50 rounded-xl p-6 hover:border-gray-700 transition-all">
+                  <div className="bg-white dark:bg-gray-900/30 border border-gray-200 dark:border-gray-800/50 rounded-xl p-6 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-lg transition-all">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
                       <div>
-                        <h3 className="text-xl font-bold text-white mb-1">{exp.role}</h3>
-                        <div className="flex items-center gap-2 text-blue-400 font-medium">
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{exp.role}</h3>
+                        <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium">
                           <FiBriefcase className="text-sm" />
                           {exp.company}
                         </div>
                       </div>
-                      <div className="flex items-center gap-2 text-gray-500 mt-2 md:mt-0">
+                      <div className="flex items-center gap-2 text-gray-500 dark:text-gray-500 mt-2 md:mt-0">
                         <FiCalendar className="text-sm" />
                         {exp.period}
                       </div>
                     </div>
 
-                    <p className="text-gray-400 mb-4 leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
                       {exp.description}
                     </p>
 
                     <div className="space-y-2">
                       {exp.achievements.map((achievement, j) => (
                         <div key={j} className="flex items-start gap-2">
-                          <span className="text-green-400 mt-1">✓</span>
-                          <span className="text-gray-300 text-sm">{achievement}</span>
+                          <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
+                          <span className="text-gray-700 dark:text-gray-300 text-sm">{achievement}</span>
                         </div>
                       ))}
                     </div>

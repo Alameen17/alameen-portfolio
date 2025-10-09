@@ -9,17 +9,17 @@ export default function MobileMenu({ open }) {
     <motion.div 
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="fixed top-[73px] left-0 w-full bg-[#0a0a0a] border-b border-gray-800/50 z-40 md:hidden"
+      className="fixed top-[130px] left-0 w-full bg-white dark:bg-[#0a0a0a] border-b border-gray-200 dark:border-gray-800/50 z-40 md:hidden"
     >
       <div className="px-6 py-6 flex flex-col gap-4">
-        <a href="#about" className="text-gray-300 hover:text-white transition-colors py-2">About</a>
-        <a href="#projects" className="text-gray-300 hover:text-white transition-colors py-2">Projects</a>
-        <a href="#contact" className="text-gray-300 hover:text-white transition-colors py-2">Contact</a>
-        <div className="flex gap-4 pt-4 border-t border-gray-800">
-          <a href="https://github.com/Alameen17" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+        <a href="#about" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors py-2">About</a>
+        <a href="#projects" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors py-2">Projects</a>
+        <a href="#contact" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors py-2">Contact</a>
+        <div className="flex gap-4 pt-4 border-t border-gray-200 dark:border-gray-800">
+          <a href="https://github.com/Alameen17" target="_blank" rel="noopener noreferrer" className="text-gray-400 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
             <FiGithub className="text-xl" />
           </a>
-          <a href="https://www.linkedin.com/in/al-ameen-adekunle-2a085a1b5/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+          <a href="https://www.linkedin.com/in/al-ameen-adekunle-2a085a1b5/" target="_blank" rel="noopener noreferrer" className="text-gray-400 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
             <FiLinkedin className="text-xl" />
           </a>
         </div>
