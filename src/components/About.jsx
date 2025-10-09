@@ -4,9 +4,9 @@ import { FiDownload } from 'react-icons/fi';
 
 export default function About() {
   const skills = [
-    'Node.js', 'Express', 'NestJS', 'Postgres',
+    'Node.js', '.NET', 'C#', 'Postgres',
     'MongoDB', 'Docker', 'Kubernetes', 'AWS',
-    'RESTful APIs', 'Microservices', 'Jest', 'CI/CD'
+    'RESTful APIs', 'Microservices', 'ASP.NET', 'CI/CD'
   ];
 
   return (
