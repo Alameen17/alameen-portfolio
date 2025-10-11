@@ -22,7 +22,7 @@ export default function Projects() {
       name: 'Cloud-native Auth Service',
       desc: 'OAuth2 / JWT based auth service built for horizontal scalability.',
       impact: 'Reduced authentication latency by 60%',
-      github: 'https://github.com/Alameen17',
+      github: 'https://github.com/Alameen17/cloud-auth-starter',
       demo: null,
       tags: [
         { name: 'Express', icon: <SiExpress /> },
